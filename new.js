@@ -62,6 +62,7 @@ app.post("/upload", multer.single("img"), (req,res)=>{
     //storage.setMaxoperationretryTime(1000);
     getDownloadURL(ref(storage , 'images/' +req.file['originalname']) ).
     then((url)=>{
+        console.log("url done");
       const input = {
           "startUrls": [
               {
@@ -82,6 +83,7 @@ app.post("/upload", multer.single("img"), (req,res)=>{
           const { items } = await client.dataset(run.defaultDatasetId).listItems();
          // res.write("PLEASE WAIT UNTIL REDIRECTED!");
           items.forEach((item) => {
+              
 
               let len_arr = item.ocrText.length;
 
