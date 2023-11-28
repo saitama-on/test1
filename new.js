@@ -87,7 +87,7 @@ app.post("/upload", multer.single("img"), (req,res)=>{
                     const { items } = await client.dataset(run.defaultDatasetId).listItems();
                     items.forEach((item) => {
                         console.dir(item);
-                        res.send(item["text"])
+                        res.redirect(item["file"])
                     });
                 })();
     
