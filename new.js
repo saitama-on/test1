@@ -21,7 +21,7 @@ const client = new ApifyClient({
 const multer = Multer({
     storage: FirebaseStorage({
       bucketName: 'newproj2-fc003.appspot.com',
-      directoryPath:'images',
+      directoryPath:'imgs',
       credentials: {
     projectId: "newproj2-fc003",
     privateKey: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC8bjHzFM3x2OXO\nOSSpgu4TVIbCVHBbNm6Nb2fRl8qe9lrZ7gBWMiXw6LqESlYzBmH4PzvjtlxwMjTR\n6GA/kxvMnmne+KtCUHSI248mZJIy/vWzYIw7IK7LsuXeS1wactDZUXxDVFNDHAcV\nq/inJGbBCCWlI8DdCpodDJmAFhbt6E7EshQog8rHfo8egrvHKBfQJwBhaq2wGDJm\nv+IklETFyx3Nb6eYqMhVwjn6+LW9fjlxEp25BBlbyXu+r/52I5FKClpghqwzwFQz\n5ghGnXNgu99d2/Ik+swCdxOm+Kpg5SM6Vys00gcU8swbLTL7xshcs1IwfmzjaFFM\n77E2A1gBAgMBAAECggEAEfnwTXivYhJ3cApfD0XkqRbwCUONeYIyn08gyCvTQoGN\nrstIIHEF0hsdyieeXB1QhOKhd8qqvHBpvhnNbts9tHJrdsBh9EBhMbpCiJ7hHLja\nn1uHXU+zpU7Co8esOIC6IHVn5bN6gwU+PsjKfsWYAPPiRYQo7t2HUNymG0RgOR99\nxHolipddul/c/xwslj3Zohw+oQp+Ir54HMImWUlDMo3ROcLaTyRuN+Fq+2xYVGD7\nG0eEuOqXyP+ZKpT66MOZ+JfZPF+Hrjk2DhtNIDDbl9H11OZt+wKtcCbvB9dxHUO7\n1AYMoGRBLo8t2P/zC4ihQzT6Ytq2WNm7GTeM6nhHjQKBgQDond2mI3aKAGXuyXJ5\nJrRir0fM4A+RUif9wUsc1MN0GUONWZztaYo1AIrMl8tAiN/StVtfcVXnxnSh9ZqV\n2KwRF2RxT3e+12OPIVvxbNOlm7iII5NLsLXFU/ysmmmAaOnuCGAUgYaRfEa1LXIx\n2NmujVU04YG2Eoe5NHZB6i5aRQKBgQDPXz7i/Zfhb+OonVMtXpA7JNP+LDHsQb5C\nIOKXfyTTQtGKeKGJ9gLu1TIRr9BOqBo1ywOTTjVi/YLdz6t5MByflavdXiB68wj+\noOGZqTJ6nNqS0ahvsT2rFXCzhgZD6Ma+LV/E8gHeE2lNKd3tzPwyjtFcgRHFr8zz\n5aJ8txcgjQKBgGcwIHLiqGLvakhS9ITptntQZflsK3u7hiH67OcNOub1jhHV/tcS\nSkzYwLmhXHh0P1WpPa9JB2KZloOB/+EZDLtINTZOmj/+LBwCIFcof3qnaWR644xg\nB0JRz3SByus7nwoIjRaLnrZK+tLEJjQWjfnwmCutHW03Kx3tN8hlqcpBAoGBAK9G\nQOAZGiOor9LXzvL9B4mF8kzWTAf19XrtUrhb9eM+id+xYFA8iHQX7O74HGgvO6AW\nDNqX8xXNUqxql/Ohj7/vAMnlgiyJeSPHFYgMc6chJrmLzgNB2u7c+1oxwN/rQviB\nX34WUy/CVnGrHnKdnNia0CiQy1W85s2LXZBuLHUNAoGBAL8U979jM7jwkgYaNnrw\n2g4rXK2qltwx86U1N4NsS+AtMRQpZU9MExB+B5RNWtqHYq3bYJr3wHevB5rdTd2l\nVAjhebEVG/CC4veNcljVscYqU7vuAbJvzHRMAgeu8SH9WyDAaMq0mpkbWeSQOOfG\nfu/E5q8TyWvYFEAmrR0lCwV6\n-----END PRIVATE KEY-----\n",
@@ -60,7 +60,7 @@ app.post("/upload", multer.single("img"), (req,res)=>{
    console.log("Uploaded successfuly!");
     
     //storage.setMaxoperationretryTime(1000);
-    getDownloadURL(ref(storage , 'images/' +req.file['originalname']) ).
+    getDownloadURL(ref(storage , 'imgs/' +req.file['originalname']) ).
     then((url)=>{
         console.log("url done");
       const input = {
