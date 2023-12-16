@@ -53,7 +53,7 @@ const app1 = initializeApp(firebaseConfig);
 const storage = getStorage(app1);
 //setMaxOperationRetryTime (1000);
 
-app.post("/hi" , (req,res)=>{
+app.get("/hi" , (req,res)=>{
     console.log("inside hi");
     res.send("hello");
 })
