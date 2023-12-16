@@ -53,6 +53,11 @@ const app1 = initializeApp(firebaseConfig);
 const storage = getStorage(app1);
 //setMaxOperationRetryTime (1000);
 
+app.post("/hi" , (req,res)=>{
+    console.log("inside hi");
+    res.send("hello");
+})
+
 
 app.post("/upload", multer.single("img"), (req,res)=>{
 
